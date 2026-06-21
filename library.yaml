@@ -1,0 +1,32 @@
+# library.yaml — catalogue qui pointe vers mes repos de domaine.
+# Rien n'est copié : ce sont des RÉFÉRENCES. `/library use <nom>` tire à la demande.
+#
+# source = chemin local (/... ou ~/...)  OU  url GitHub (privé OK via SSH) :
+#   https://github.com/<owner>/<repo>/blob/<branch>/<chemin>/SKILL.md
+
+# Où installer : `default` = projet courant ; `global` = toutes les sessions.
+default_dirs:
+  skills:
+    - default: .claude/skills/
+    - global: ~/.claude/skills/
+    - codex: ~/.agents/skills/
+    - opencode: ~/.config/opencode/skills/
+  agents:
+    - default: .claude/agents/
+    - global: ~/.claude/agents/
+  prompts:
+    - default: .claude/commands/
+    - global: ~/.claude/commands/
+
+# Catalogue — vide au départ. Tu le remplis avec /library add au fur et à mesure
+# que tu crées des repos de domaine (skills-devops, skills-frontend, prompts-*, …).
+library:
+  skills: []
+  agents: []
+  prompts: []
+
+  # Exemple d'entrée par domaine (dé-commenter / adapter) :
+  # skills:
+  #   - name: firecrawl
+  #     description: Scrape/crawl/search de sites
+  #     source: https://github.com/Raf7c/skills-devops/blob/main/firecrawl/SKILL.md
