@@ -19,9 +19,9 @@ library:
   skills:
     - name: grill-me
       description: Interviews you branch by branch on a plan before coding
-      source: https://github.com/Raf7c/productivity/blob/main/skills/grill-me/SKILL.md
+      source: https://github.com/Raf7c/aidd-library-productivity/blob/main/skill/grill-me/SKILL.md
     - name: handoff
       description: Compacts the current session into a handoff doc
-      source: https://github.com/Raf7c/productivity/blob/main/skills/handoff/SKILL.md
+      source: https://github.com/Raf7c/aidd-library-productivity/blob/main/skill/handoff/SKILL.md
   agents: []
   prompts: []
