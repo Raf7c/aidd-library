@@ -10,7 +10,7 @@ A meta-skill for private-first distribution of agentics (skills, agents, and pro
 
 ## Variables
 
-> Catalogue privé de raf. Submodule de `aidd`, cloné dans `~/.claude/skills/library/`.
+> raf's private catalog. Sibling repo of `aidd`, cloned into `~/.claude/skills/library/`.
 
 - **LIBRARY_REPO_URL**: `git@github.com:Raf7c/aidd-library.git`
 - **LIBRARY_YAML_PATH**: `~/.claude/skills/library/library.yaml`

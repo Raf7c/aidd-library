@@ -1,17 +1,18 @@
-# aidd-library — catalogue de mes capacités d'agent
+# aidd-library — catalog of my agent capabilities
 
-Submodule de [`aidd`](https://github.com/Raf7c/aidd). Meta-skill issu de
+Sibling repo of [`aidd`](https://github.com/Raf7c/aidd), placed next to it under
+`~/.config/aiddconf/`. Meta-skill derived from
 [the-library](https://github.com/disler/the-library) (MIT).
 
-`library.yaml` ne contient pas les skills — il **référence** mes repos de domaine
-(skills-devops, skills-frontend, prompts-*, …). Rien n'est installé tant que tu ne
-fais pas `/library use <nom>`.
+`library.yaml` does not contain the skills — it **references** my domain repos
+(skills-devops, skills-frontend, prompts-*, …). Nothing is installed until you run
+`/library use <name>`.
 
-| Commande | Rôle |
+| Command | Purpose |
 |---|---|
-| `/library add <détails>` | enregistrer une entrée dans le catalogue |
-| `/library use <nom>` | tirer dans le projet ; `... global` pour toutes les sessions |
-| `/library push <nom>` | renvoyer tes améliorations vers son repo de domaine |
-| `/library sync` / `list` / `search` / `remove` | gérer le catalogue |
+| `/library add <details>` | register an entry in the catalog |
+| `/library use <name>` | pull into the project; `... global` for all sessions |
+| `/library push <name>` | push your improvements back to its domain repo |
+| `/library sync` / `list` / `search` / `remove` | manage the catalog |
 
-Installé via `aidd` (cloné dans `~/.claude/skills/library/`).
+Installed via `aidd` (cloned into `~/.claude/skills/library/`).

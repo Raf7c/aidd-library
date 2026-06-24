@@ -1,16 +1,12 @@
-# library.yaml — catalogue qui pointe vers mes repos de domaine.
-# Rien n'est copié : ce sont des RÉFÉRENCES. `/library use <nom>` tire à la demande.
+# library.yaml: catalog pointing to my domain repos.
 #
-# source = chemin local (/... ou ~/...)  OU  url GitHub (privé OK via SSH) :
-#   https://github.com/<owner>/<repo>/blob/<branch>/<chemin>/SKILL.md
+# source = local path (/... or ~/...)  OR  GitHub url (private via SSH):
 
-# Où installer : `default` = projet courant ; `global` = toutes les sessions.
+# Where to install: `default` = current project; `global` = all sessions.
 default_dirs:
   skills:
     - default: .claude/skills/
     - global: ~/.claude/skills/
-    - codex: ~/.agents/skills/
-    - opencode: ~/.config/opencode/skills/
   agents:
     - default: .claude/agents/
     - global: ~/.claude/agents/
@@ -18,15 +14,14 @@ default_dirs:
     - default: .claude/commands/
     - global: ~/.claude/commands/
 
-# Catalogue — vide au départ. Tu le remplis avec /library add au fur et à mesure
-# que tu crées des repos de domaine (skills-devops, skills-frontend, prompts-*, …).
+# Catalog. Filled in over time as domain repos are added.
 library:
-  skills: []
+  skills:
+    - name: grill-me
+      description: Interviews you branch by branch on a plan before coding
+      source: https://github.com/Raf7c/productivity/blob/main/skills/grill-me/SKILL.md
+    - name: handoff
+      description: Compacts the current session into a handoff doc
+      source: https://github.com/Raf7c/productivity/blob/main/skills/handoff/SKILL.md
   agents: []
   prompts: []
-
-  # Exemple d'entrée par domaine (dé-commenter / adapter) :
-  # skills:
-  #   - name: firecrawl
-  #     description: Scrape/crawl/search de sites
-  #     source: https://github.com/Raf7c/skills-devops/blob/main/firecrawl/SKILL.md
