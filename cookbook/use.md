@@ -62,10 +62,12 @@ If the entry has a `requires` field:
   - Raw URL pattern: `https://raw.githubusercontent.com/<org>/<repo>/<branch>/<path>`
 - Determine the clone URL: `https://github.com/<org>/<repo>.git`
 - Determine the parent directory path within the repo (everything before the filename)
-- Clone into a temporary directory:
+- Determine the `ref`: use the entry's `ref` field if present, otherwise fall back to the `<branch>` from the URL (usually `main`).
+- Clone into a temporary directory at that ref:
   ```bash
   tmp_dir=$(mktemp -d)
-  git clone --depth 1 --branch <branch> https://github.com/<org>/<repo>.git "$tmp_dir"
+  git clone --depth 1 --branch <ref> https://github.com/<org>/<repo>.git "$tmp_dir"
+  # for a commit SHA instead: clone without --branch, then (cd "$tmp_dir" && git checkout <sha>)
   ```
 - Copy the parent directory of the file to the target:
   ```bash
@@ -78,7 +80,7 @@ If the entry has a `requires` field:
 
 **If clone fails (private repo)**, try SSH:
   ```bash
-  git clone --depth 1 --branch <branch> git@github.com:<org>/<repo>.git "$tmp_dir"
+  git clone --depth 1 --branch <ref> git@github.com:<org>/<repo>.git "$tmp_dir"
   ```
 
 ### 6. Verify Installation

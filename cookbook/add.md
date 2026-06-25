@@ -42,6 +42,7 @@ Read `library.yaml`, add the new entry under the correct section:
 - name: <name>
   description: <description>
   source: <source>
+  ref: main                 # tracked version: branch, tag, or commit (default main)
   requires: [<typed:refs>]  # omit if no dependencies
 ```
 

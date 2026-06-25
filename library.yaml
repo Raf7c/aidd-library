@@ -20,8 +20,10 @@ library:
     - name: grill-me
       description: Interviews you branch by branch on a plan before coding
       source: https://github.com/Raf7c/aidd-library-productivity/blob/main/skill/grill-me/SKILL.md
+      ref: main
     - name: handoff
       description: Compacts the current session into a handoff doc
       source: https://github.com/Raf7c/aidd-library-productivity/blob/main/skill/handoff/SKILL.md
+      ref: main
   agents: []
   prompts: []

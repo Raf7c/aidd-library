@@ -97,6 +97,14 @@ When working with GitHub sources, prefer `gh api` for accessing single files (e.
 5. Push to remote
 6. The temporary directory is cleaned up automatically
 
+## Versioning (`ref`)
+
+Each catalog entry may carry an optional `ref` field: a git tag, a branch, or a commit SHA.
+It tells `use`/`sync` which version to fetch. If absent, the repo's default branch (usually
+`main`) is used. Fetch a tag or branch with `git clone --depth 1 --branch <ref> <clone_url>`;
+for a commit SHA, clone then `git checkout <sha>`. A branch (`main`, `dev`) is a moving target;
+a tag or commit is frozen. Pin a version by setting `ref: v1.0` once a domain repo is tagged.
+
 ## Typed Dependencies
 
 The `requires` field uses typed references to avoid ambiguity:

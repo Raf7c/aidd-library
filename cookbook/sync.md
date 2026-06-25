@@ -50,10 +50,11 @@ For each installed entry, fetch the latest from its source:
   - Raw URL pattern: `https://raw.githubusercontent.com/<org>/<repo>/<branch>/<path>`
 - Determine the clone URL: `https://github.com/<org>/<repo>.git`
 - Determine the parent directory path within the repo (everything before the filename)
+- Determine the `ref`: use the entry's `ref` field if present, otherwise the `<branch>` from the URL.
 - Clone into a temporary directory:
   ```bash
   tmp_dir=$(mktemp -d)
-  git clone --depth 1 --branch <branch> https://github.com/<org>/<repo>.git "$tmp_dir"
+  git clone --depth 1 --branch <ref> https://github.com/<org>/<repo>.git "$tmp_dir"
   ```
 - Copy the parent directory of the file to the target:
   ```bash
@@ -66,7 +67,7 @@ For each installed entry, fetch the latest from its source:
 
 **If clone fails (private repo)**, try SSH:
   ```bash
-  git clone --depth 1 --branch <branch> git@github.com:<org>/<repo>.git "$tmp_dir"
+  git clone --depth 1 --branch <ref> git@github.com:<org>/<repo>.git "$tmp_dir"
   ```
 
 ### 5. Resolve Dependencies
